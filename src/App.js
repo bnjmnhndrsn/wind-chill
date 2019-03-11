@@ -36,12 +36,6 @@ class App extends Component {
             temperature: 50
         };
         
-        this.onChange = this.onChange.bind(this);
-    }
-    onChange(e){
-        this.setState({
-            temperature: e.target.value
-        });
     }
     
     render() {
@@ -51,10 +45,20 @@ class App extends Component {
             <div className="container">
                 <div className="left-col">
                     <div className="cell">
-                        <NumberInput label="Temperature" value={this.state.temperature} suffix="° F"  />
+                        <NumberInput
+                            label="Temperature"
+                            value={this.state.temperature}
+                            suffix="° F"
+                            onChange={(val) => this.setState({temperature: val})}
+                        />
                     </div>
                     <div className="cell">
-                        <NumberInput label="Windspeed" value={this.state.windSpeed} suffix="mph" />
+                        <NumberInput
+                            label="Windspeed"
+                            value={this.state.windSpeed}
+                            suffix="mph"
+                            onChange={(val) => this.setState({windSpeed: val})}
+                        />
                     </div>
                 </div>
                 <div className="right-col">
