@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import {
-  LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer
-} from 'recharts';
+import './index.css';
+
+import Graph from './Graph';
+import Windchill from './Windchill';
 
 const calcChill = (windSpeed, temperature) => {
     return 35.74 + (0.6215 * temperature) - (35.75 * Math.pow(windSpeed, 0.16)) + (0.4275 * temperature * Math.pow(windSpeed, 0.16));
@@ -44,30 +45,19 @@ class App extends Component {
     }
     
     render() {
-//        const data = getDataWithTemperatureRange(this.state.windSpeed);
-        const data = getDataWithWindspedRange(this.state.temperature);
+        const dataSet = getDataWithWindspedRange(this.state.temperature);
+        const windChill = calcChill(this.state.windSpeed, this.state.temperature);
         return (
-            <div>
-                <div>
-                    <ResponsiveContainer width="50%" height={500}>
-                        <LineChart
-                            width={500}
-                            height={300}
-                            data={data}
-                            margin={{
-                                top: 5, right: 30, left: 20, bottom: 5,
-                            }}
-                        >
-                            <CartesianGrid strokeDasharray="3 3" />
-                            <XAxis dataKey="x" />
-                            <YAxis domain={[-60, 60]} />
-                            <Tooltip />
-                            <Line isAnimationActive={false} type="monotone" dataKey="y" stroke="#8884d8" dot={false} />
-                        </LineChart>
-                    </ResponsiveContainer>
+            <div className="container">
+                <div className="left-col">
                 </div>
-                <div>
-                    <input style={{width: '100%'}} type="range" min="-20" max="50" value={this.state.temperature} onChange={this.onChange} />
+                <div className="right-col">
+                    <div className="cell">
+                        <Windchill value={windChill} />
+                    </div>
+                    <div className="cell">
+                        <Graph data={dataSet} />
+                    </div>
                 </div>
             </div>
 
