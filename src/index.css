@@ -24,17 +24,21 @@ body {
     flex-direction: column;
 }
 
-.windchill {
+.number-box {
+    flex-direction: column;
+    
 }
 
-.windchill__label {
-    font-size: 12px;
+.number-box__label {
+    font-size: 14px;
     text-transform: uppercase;
     margin-bottom: 10px;
     font-weight: bold;
 }
 
-.windchill__value {
+.number-box__value {
+    font-size: 56px;
+    height: 200px;
+    line-height: 200px;
     text-align: center;
-    font-size: 36px
 }

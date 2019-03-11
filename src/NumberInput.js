@@ -1,18 +1,17 @@
 import React from 'react';
-import numeral from 'numeral';
 
-export default function Windchill ({value}) {
+export default function NumberInput ({label, value, suffix}) {
     return (
         <div className="number-box">
             <div className="number-box__label">
-                Windchill
+                { label }
             </div>
             <div className="number-box__value">
                 <span>
-                    { numeral(value).format('0.0') }
+                    { value }
                 </span>
                 <span>
-                    ° F
+                    { suffix }
                 </span>
             </div>
         </div>

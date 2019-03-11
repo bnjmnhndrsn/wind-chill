@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import './index.css';
 
 import Graph from './Graph';
 import Windchill from './Windchill';
+import NumberInput from './NumberInput';
 
 const calcChill = (windSpeed, temperature) => {
     return 35.74 + (0.6215 * temperature) - (35.75 * Math.pow(windSpeed, 0.16)) + (0.4275 * temperature * Math.pow(windSpeed, 0.16));
@@ -50,6 +50,12 @@ class App extends Component {
         return (
             <div className="container">
                 <div className="left-col">
+                    <div className="cell">
+                        <NumberInput label="Temperature" value={this.state.temperature} suffix="° F"  />
+                    </div>
+                    <div className="cell">
+                        <NumberInput label="Windspeed" value={this.state.windSpeed} suffix="mph" />
+                    </div>
                 </div>
                 <div className="right-col">
                     <div className="cell">
