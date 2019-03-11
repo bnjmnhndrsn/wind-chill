@@ -30,8 +30,11 @@ body {
 .windchill__label {
     font-size: 12px;
     text-transform: uppercase;
+    margin-bottom: 10px;
+    font-weight: bold;
 }
 
 .windchill__value {
+    text-align: center;
     font-size: 36px
 }

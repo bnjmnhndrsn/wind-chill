@@ -1,4 +1,5 @@
 import React from 'react';
+import numeral from 'numeral';
 
 export default function Windchill ({value}) {
     return (
@@ -7,7 +8,7 @@ export default function Windchill ({value}) {
                 Windchill
             </div>
             <div className="windchill__value">
-                { value }
+                { numeral(value).format('0.0') }
             </div>
         </div>
     )
