@@ -45,7 +45,7 @@ class App extends Component {
             <div className="container">
                 <div className="row">
                     <div className="left-col">
-                        <div className="cell">
+                        <div className="temperature-cell">
                             <NumberInput
                                 label="Temperature"
                                 value={this.state.temperature}
@@ -53,7 +53,7 @@ class App extends Component {
                                 onChange={(val) => this.setState({temperature: val})}
                             />
                         </div>
-                        <div className="cell">
+                        <div className="windspeed-cell">
                             <NumberInput
                                 label="Windspeed"
                                 value={this.state.windSpeed}
