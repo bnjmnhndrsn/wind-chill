@@ -43,31 +43,34 @@ class App extends Component {
         const windChill = calcChill(this.state.windSpeed, this.state.temperature);
         return (
             <div className="container">
-                <div className="left-col">
-                    <div className="cell">
-                        <NumberInput
-                            label="Temperature"
-                            value={this.state.temperature}
-                            suffix="° F"
-                            onChange={(val) => this.setState({temperature: val})}
-                        />
+                <div className="row">
+                    <div className="left-col">
+                        <div className="cell">
+                            <NumberInput
+                                label="Temperature"
+                                value={this.state.temperature}
+                                suffix="° F"
+                                onChange={(val) => this.setState({temperature: val})}
+                            />
+                        </div>
+                        <div className="cell">
+                            <NumberInput
+                                label="Windspeed"
+                                value={this.state.windSpeed}
+                                suffix="mph"
+                                onChange={(val) => this.setState({windSpeed: val})}
+                            />
+                        </div>
                     </div>
-                    <div className="cell">
-                        <NumberInput
-                            label="Windspeed"
-                            value={this.state.windSpeed}
-                            suffix="mph"
-                            onChange={(val) => this.setState({windSpeed: val})}
-                        />
+                    <div className="right-col">
+                        <div className="cell">
+                            <Windchill value={windChill} />
+                        </div>
                     </div>
                 </div>
-                <div className="right-col">
-                    <div className="cell">
-                        <Windchill value={windChill} />
-                    </div>
-                    <div className="cell">
-                        <Graph data={dataSet} />
-                    </div>
+
+                <div>
+                    <Graph data={dataSet} />
                 </div>
             </div>
 

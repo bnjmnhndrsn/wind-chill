@@ -7,11 +7,15 @@ body {
     width: 800px;
     margin: 0 auto;
     display: flex;
+    flex-direction: column;
+}
+
+.row {
+    display: flex;
     flex-direction: row;
 }
 
 .cell {
-    padding: 20px;
 }
 
 .left-col {
@@ -22,11 +26,13 @@ body {
 .right-col {
     flex: 1;
     flex-direction: column;
+    justify-content: center;
+    display: flex;
 }
 
 .number-box {
     flex-direction: column;
-    
+    padding: 20px;
 }
 
 .number-box__label {
